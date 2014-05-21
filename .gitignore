@@ -1,12 +1,33 @@
-*.class
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+package temp;
 
-# Package Files #
-*.jar
-*.war
-*.ear
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+/**
+ *
+ * @author lucas
+ */
+public class VerificaTokens{
+    
+    public boolean vazioTotal(String text){
+        
+        int fullVazia =0;
+        // returna true se o text não contiver absolutamente nada
+        if(text.isEmpty()) 
+           return true;
+        
+        //Verifica se o text contém apenas espaços em branco e/ou tabulações e/ou quebra de linha
+        for(int i=0; i<text.length(); i++){
+            if(text.charAt(i) == ' ' || text.charAt(i) == '\n' || text.charAt(i) == '\t')
+            fullVazia++;
+            
+                if(fullVazia == text.length())
+                return true;
+        }
+        
+        return false;
+    }
+}
